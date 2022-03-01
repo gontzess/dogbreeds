@@ -1,4 +1,4 @@
-const app = require('./dogserver')
+import app from './dogserver';
 
 const PORT = 3000
 app.listen(PORT, () => {

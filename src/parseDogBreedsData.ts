@@ -1,29 +1,18 @@
-/*
-
-input: breeds object
-
-create breedsList = []
-iterate over keys (breeds) and value (sub-breeds)
-  if subBreeds is empty
-    push breed to breedLIst
-  else
-    iterate over subBreeds
-      concat breed with subBreed and push to breedLIst
-return breedsList
-
-*/
-
+// @ts-ignore
 function parseDogBreedsData(breeds) {
+  // @ts-ignore
   const breedsList = []
   Object.keys(breeds).forEach(breed => {
     const subBreeds = breeds[breed]
     if (subBreeds.length === 0) {
       breedsList.push(breed)
     } else {
+      // @ts-ignore
       breedsList.push(...subBreeds.map(subBreed => subBreed + ' ' + breed))
     }
   })
+  // @ts-ignore
   return breedsList
 }
 
-module.exports = parseDogBreedsData
+export default parseDogBreedsData

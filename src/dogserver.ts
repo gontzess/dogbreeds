@@ -1,7 +1,6 @@
-const axios = require('axios');
-const express = require('express')
-
-const parseDogBreedsData = require('./parseDogBreedsData')
+import axios from 'axios'
+import express from 'express'
+import parseDogBreedsData from './parseDogBreedsData'
 
 const app = express()
 
@@ -18,4 +17,4 @@ app.get('/breeds', (req, res) => {
   getDogBreedsData().then((data) => res.json(parseDogBreedsData(data)))
 })
 
-module.exports = app
+export default app

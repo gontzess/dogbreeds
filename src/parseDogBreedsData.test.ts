@@ -1,4 +1,4 @@
-const parseDogBreedsData = require("./parseDogBreedsData");
+import parseDogBreedsData from "./parseDogBreedsData"
 
 describe("parseDogBreedsData()", () => {
   it("parses data correctly", () => {

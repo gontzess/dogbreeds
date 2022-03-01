@@ -1,7 +1,7 @@
-const { rest } = require('msw');
-const { setupServer } = require('msw/node');
-const axios = require('axios');
-const app = require('./dogserver');
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import axios from 'axios';
+import app from "./dogserver";
 
 const mockServer = setupServer(
   rest.get(`https://dog.ceo/api/breeds/list/all`, (req, res, ctx) => {
@@ -16,6 +16,7 @@ const mockServer = setupServer(
   }),
 )
 
+// @ts-ignore
 let dogServer
 beforeAll(() => {
   mockServer.listen()
@@ -24,6 +25,7 @@ beforeAll(() => {
 
 afterAll(() => {
   mockServer.close()
+  // @ts-ignore
   dogServer.close()
 })
 
